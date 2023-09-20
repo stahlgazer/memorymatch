@@ -9,6 +9,7 @@ function App() {
   const [userInput, setUserInput] = useState([]);
   const [message, setMessage] = useState('');
   const [isPlaying, setIsPlaying] = useState(false);
+  const [inSequence, setInSequence] = useState(false);
 
   useEffect(() => {
     if (isPlaying) {
@@ -18,15 +19,18 @@ function App() {
 
   const generateSequence = (level) => {
     const newSequence = [];
+
     for (let i = 0; i < level; i++) {
       const randomColor = COLORS[Math.floor(Math.random() * COLORS.length)];
       newSequence.push(randomColor);
     }
     setSequence(newSequence);
+
   };
 
 
   const playSequence = async () => {
+    setInSequence(true);
     for (const color of sequence) {
       await lightUpSquare(color);
       await sleep(500); // Adjust the delay as needed
@@ -34,6 +38,7 @@ function App() {
       await sleep(500);
     }
     setMessage('Your turn!');
+    setInSequence(false);
   };
 
   const lightUpSquare = (color) => {
@@ -98,8 +103,8 @@ function App() {
       <div
         key={color}
         id={color}
-        className={`square ${isPlaying ? 'disabled' : ''}`}
-        style={{ backgroundColor: `${color}`}}
+        className={`square ${inSequence ? 'disabled' : ''}`}
+        style={{ backgroundColor: `${color}` }}
         onClick={() => handleSquareClick(color)}
       ></div>
     ));

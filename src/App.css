@@ -42,15 +42,18 @@
 }
 
 .board {
+
   display: flex;
   flex-wrap: wrap;
-  border: solid 1px rgb(128, 32, 32);
 }
 .square {
-  border: solid 1px black;
+  border:1px solid white;
   width: 33%;
-  height: 100px;
-  opacity: 0.5;
+  height: 150px;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+
+.square.disabled {
+  pointer-events: none;
 }
