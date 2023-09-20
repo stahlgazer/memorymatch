@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
-const COLORS = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink', 'black', 'gray'];
+const COLORS = ['cyan', 'blue', 'green', 'yellow', 'purple', 'orange', 'red', 'teal', 'magenta'];
 
 function App() {
   const [level, setLevel] = useState(1);

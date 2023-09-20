@@ -42,16 +42,18 @@
 }
 
 .board {
-
   display: flex;
   flex-wrap: wrap;
 }
 .square {
-  border:1px solid white;
+  border: 1px solid white;
   width: 33%;
   height: 150px;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+.square:hover {
+  filter: brightness(50%);
 }
 
 .square.disabled {
