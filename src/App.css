@@ -5,12 +5,13 @@
 }
 
 .board {
-  width: 350px;
-  height: 350px;
+  width: 375px;
+  height: 375px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
 }
+
 .square {
   border: 1px solid white;
   width: 33.3%;
@@ -18,8 +19,9 @@
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
 .square:hover {
-  filter: brightness(50%);
+  -webkit-filter: brightness(.5);
 }
 
 .square.disabled {

@@ -53,7 +53,7 @@ function App() {
     return new Promise((resolve) => {
       setMessage(`Watch carefully: ${color}`);
       setTimeout(() => {
-        document.getElementById(color).style.backgroundColor = 'lightgray';
+        document.getElementById(color).style.backgroundColor = 'white';
         setTimeout(() => {
           resolve();
         }, 500);
